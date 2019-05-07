@@ -103,8 +103,10 @@ export default {
 }
 
 .todo-card {
-  min-height: 15rem;
-  background-color: #fff;
+  border-radius: 20px;
+  border: solid 1px #979797;
+  min-height: var(--base-height);
+  background-color: var(--white);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;

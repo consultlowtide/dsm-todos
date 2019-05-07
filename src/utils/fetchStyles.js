@@ -1,3 +1,5 @@
+// TODO: Remove this file.
+
 const fetch = require('node-fetch')
 const fs = require('fs')
 

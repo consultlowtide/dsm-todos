@@ -28,11 +28,27 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: var(--white);
+  background-color: var(--primary-color);
+  padding: 1rem;
 }
 
-.app-header__action-buttons button,
-.logo a {
-  margin-left: 0.5rem;
+.app-header__action-buttons button {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  border: solid 1px var(--white);
+  color: var(--white);
+  background-color: var(--primary-color);
+  cursor: pointer;
+  transition: var(--base-transition);
+}
+
+.app-header__action-buttons button:hover {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: var(--white);
+  color: var(--black);
 }
 </style>

@@ -1,9 +1,9 @@
 const BASE_TODOS = {
   todos: [
-    { id: 1, title: '', complete: false },
-    { id: 2, title: '', complete: false },
-    { id: 3, title: '', complete: false },
-    { id: 4, title: '', complete: false }
+    { id: 1, content: '', complete: false },
+    { id: 2, content: '', complete: false },
+    { id: 3, content: '', complete: false },
+    { id: 4, content: '', complete: false }
   ],
   smallTodos: [{ id: 1, title: '', complete: true }]
 }
