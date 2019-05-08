@@ -2,7 +2,8 @@
   <div
     :class="{
       'todo-card': true,
-      'todo-card--complete': todo.complete
+      'todo-card--complete': todo.complete,
+      'todo-card--incomplete': !todo.complete && todo.content !== ''
     }"
     @click="completeTodo"
   >
@@ -77,7 +78,6 @@ export default {
 
 <style scoped>
 .todo-card {
-  border-radius: 20px;
   border: solid 1px #979797;
   min-height: var(--base-height);
   background-color: var(--white);
@@ -92,6 +92,11 @@ export default {
 
 .todo-card--complete {
   text-decoration: line-through;
+  border: solid 1px #7ed321;
+}
+
+.todo-card--incomplete {
+  border: solid 1px #d0021b;
 }
 
 .edit-icon {
