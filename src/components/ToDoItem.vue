@@ -1,8 +1,8 @@
 <template>
   <div
     :class="{
-      'todo-item': true,
-      'todo-item--complete': todo.complete
+      'todo-card': true,
+      'todo-card--complete': todo.complete
     }"
     @click="completeTodo"
   >
@@ -28,7 +28,7 @@
 import AddIcon from '@/components/AddIcon.vue'
 
 export default {
-  props: ['todoItem', 'size'],
+  props: ['todoItem'],
   components: {
     AddIcon
   },
@@ -69,19 +69,28 @@ export default {
       this.todo = newTodo
       this.isEditable = false
 
-      this.$emit('save-todos', newTodo, this.size)
+      this.$emit('save-todos', newTodo)
     }
   }
 }
 </script>
 
 <style scoped>
-.todo-item {
+.todo-card {
+  border-radius: 20px;
+  border: solid 1px #979797;
+  min-height: var(--base-height);
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   user-select: none;
 }
 
-.todo-item--complete {
+.todo-card--complete {
   text-decoration: line-through;
 }
 
