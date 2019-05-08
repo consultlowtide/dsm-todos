@@ -3,11 +3,10 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "serve": "npm run fetch-styles && vue-cli-service serve",
+    "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "fetch-styles": "node ./src/utils/fetchStyles.js",
     "postversion": "git push && git push --tags && rm -rf dist/"
   },
   "dependencies": {
