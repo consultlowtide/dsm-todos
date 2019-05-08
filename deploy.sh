@@ -16,3 +16,6 @@ git commit -m 'deploy'
 git push -f git@github.com:consultlowtide/dsm-todos.git master:gh-pages
 
 cd -
+
+# increment app version
+npm version patch
