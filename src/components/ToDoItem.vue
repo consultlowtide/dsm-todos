@@ -88,6 +88,7 @@ export default {
   justify-content: center;
   cursor: pointer;
   user-select: none;
+  transition: var(--base-transition);
 }
 
 .todo-card--complete {
