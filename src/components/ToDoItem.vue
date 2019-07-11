@@ -91,6 +91,10 @@ export default {
   transition: var(--base-transition);
 }
 
+.todo-card:hover {
+  border-width: 2px;
+}
+
 .todo-card--complete {
   text-decoration: line-through;
   border: solid 1px #7ed321;
