@@ -1,5 +1,7 @@
 # DSM API Proof of Concept
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c068de8b-aa34-4215-8208-087be7e6dac6/deploy-status)](https://app.netlify.com/sites/dsm-todos/deploys)
+
 👋Hi! Thanks for visiting this project. We've set out to create accessible examples using [InVision Design System Manager (DSM)](https://www.invisionapp.com/design-system-manager). This example includes the following:
 
 #### Fetching styles from DSM
