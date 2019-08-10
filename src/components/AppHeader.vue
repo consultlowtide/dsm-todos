@@ -30,7 +30,7 @@ export default {
   align-items: center;
   color: var(--white);
   background-color: var(--primary-color);
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   height: 56px;
 }
 
