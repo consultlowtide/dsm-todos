@@ -10,6 +10,7 @@
     <add-icon v-if="todo.content === ''" @icon-click="handleIconClick" />
     <div
       v-else
+      class="todo-card__input-field"
       :ref="`todo-ref-${todo.id}`"
       @blur="addTodo"
       @keydown.enter="addTodo"
@@ -91,6 +92,14 @@ export default {
   transition: var(--base-transition);
   font-size: 1rem;
   word-break: break-all;
+}
+
+.todo-card__input-field {
+  caret-color: var(--primary-color);
+}
+
+.todo-card__input-field:focus {
+  outline-style: none;
 }
 
 .todo-card:hover {
