@@ -6,11 +6,46 @@
 
 <script>
 import ToDoContainer from '@/components/ToDoContainer'
+import axios from 'axios'
 
 export default {
   name: 'app',
   components: {
     ToDoContainer
+  },
+  data() {
+    return {
+      styles: {}
+    }
+  },
+  async mounted() {
+    this.massageDSMVariables(await this.fetchDSMTokens())
+  },
+  methods: {
+    async fetchDSMTokens() {
+      const DSMVariables = await axios.get(
+        'https://projects.invisionapp.com/dsm-export/low-tide/low-tide/style-data.json?exportFormat=list&key=B1nQrj-AN'
+      )
+      try {
+        // eslint-disable-next-line no-console
+        console.log(await DSMVariables)
+        return DSMVariables
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error(`API ERROR, DSM responded with error: ${err}`)
+      }
+    },
+    async massageDSMVariables(retrievedVariables) {
+      const { colors, typeStyles } = retrievedVariables.data.list
+
+      colors.map(colorPalette => {
+        colorPalette.colors.map(color => {
+          this.styles[`${color.name}`] = color.value
+        })
+      })
+
+      this.styles['font-family'] = `${typeStyles[3]['fontFamily']}`
+    }
   }
 }
 </script>
