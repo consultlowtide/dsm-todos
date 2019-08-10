@@ -27,8 +27,6 @@ export default {
         'https://projects.invisionapp.com/dsm-export/low-tide/low-tide/style-data.json?exportFormat=list&key=B1nQrj-AN'
       )
       try {
-        // eslint-disable-next-line no-console
-        console.log(await DSMVariables)
         return DSMVariables
       } catch (err) {
         // eslint-disable-next-line no-console

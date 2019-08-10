@@ -55,7 +55,14 @@ export default {
     },
     editTodo() {
       this.isEditable = true
-      this.$nextTick(() => this.$refs[`todo-ref-${this.todo.id}`].focus())
+      this.$nextTick(async () => {
+        const selectedElement = this.$refs[`todo-ref-${this.todo.id}`]
+        // const fieldContent = await selectedElement.textContent
+        // const fieldLength = await fieldContent.length
+
+        await selectedElement.focus()
+        // return selectedElement[0].setSelectionRange(fieldLength, fieldLength)
+      })
     },
     completeTodo() {
       if (this.isEditable === false && this.todo.content !== '') {
