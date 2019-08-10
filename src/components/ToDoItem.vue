@@ -7,22 +7,25 @@
     }"
     @click="completeTodo"
   >
-    <add-icon v-if="todo.content === ''" @icon-click="handleIconClick" />
-    <div
-      v-else
-      class="todo-card__input-field"
-      :ref="`todo-ref-${todo.id}`"
-      @blur="addTodo"
-      @keydown.enter="addTodo"
-      v-text="todo.content"
-      :contenteditable="isEditable"
-    ></div>
-    <span
-      v-if="todo.content !== '' && !isEditable && todo.complete === false"
-      @click="editTodo"
-      class="edit-icon"
-      >🖋</span
-    >
+    <div>
+      <add-icon v-if="todo.content === ''" @icon-click="handleIconClick" />
+      <span
+        v-else
+        class="todo-card__input-field"
+        :ref="`todo-ref-${todo.id}`"
+        @blur="addTodo"
+        @keydown.enter="addTodo"
+        v-text="todo.content"
+        :contenteditable="isEditable"
+      />
+      <span
+        v-if="todo.content !== '' && !isEditable && todo.complete === false"
+        @click="editTodo"
+        class="edit-icon"
+      >
+        🖋
+      </span>
+    </div>
   </div>
 </template>
 
@@ -90,7 +93,7 @@ export default {
   cursor: pointer;
   user-select: none;
   transition: var(--base-transition);
-  font-size: 1rem;
+  font-size: var(--base-font-size);
   word-break: break-all;
 }
 

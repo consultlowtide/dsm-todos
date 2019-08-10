@@ -67,17 +67,21 @@ export default {
   --base-line-height: 1rem;
   --base-space: 0.5rem;
   --base-transition: 0.2s ease-in-out;
+  --base-font-size: 1.25rem;
 }
+/* 20, 24, 28 */
 
 @media only screen and (min-width: 600px) {
   #app {
     --base-height: 12.5rem;
+    --base-font-size: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 932px) {
   #app {
     --base-height: 15rem;
+    --base-font-size: 1.75rem;
   }
 }
 </style>

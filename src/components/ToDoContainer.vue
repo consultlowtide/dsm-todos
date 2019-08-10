@@ -73,7 +73,7 @@ export default {
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 .small-todos-container {
