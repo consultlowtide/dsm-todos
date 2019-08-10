@@ -65,16 +65,15 @@ export default {
 }
 
 .app-container {
-  width: 85vw;
   max-width: 900px;
-  margin: auto;
+  margin: 1rem;
 }
 
 .todo-list {
-  padding: 2rem 1.75em;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .small-todos-container {
@@ -84,14 +83,17 @@ export default {
   padding: 1.5rem;
 }
 
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 932px) {
+  .app-container {
+    margin: auto;
+  }
+
   .todo-list {
     grid-template-columns: repeat(3, 1fr);
   }
 
   .todo-list .todo-card:first-of-type {
     grid-column: span 3;
-    font-size: 3rem;
   }
 
   .small-todos-container {

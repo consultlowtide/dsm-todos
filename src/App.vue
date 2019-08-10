@@ -28,5 +28,6 @@ export default {
   --base-line-height: 1rem;
   --base-space: 0.5rem;
   --base-transition: 0.2s ease-in-out;
+  box-sizing: border-box;
 }
 </style>

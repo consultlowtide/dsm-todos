@@ -30,7 +30,8 @@ export default {
   align-items: center;
   color: var(--white);
   background-color: var(--primary-color);
-  padding: 1rem;
+  padding: 0 1rem;
+  height: 56px;
 }
 
 .app-header__action-buttons button {
@@ -50,5 +51,11 @@ export default {
   border-radius: 20px;
   background-color: var(--white);
   color: var(--black);
+}
+
+@media only screen and (min-width: 932px) {
+  .app-header {
+    height: 64px;
+  }
 }
 </style>

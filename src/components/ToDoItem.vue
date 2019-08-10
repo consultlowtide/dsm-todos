@@ -89,6 +89,8 @@ export default {
   cursor: pointer;
   user-select: none;
   transition: var(--base-transition);
+  font-size: 1rem;
+  word-break: break-all;
 }
 
 .todo-card:hover {
