@@ -89,9 +89,9 @@ export default {
 
 <style scoped>
 .todo-card {
-  border: solid 1px #979797;
+  border: solid 1px var(--empty-border);
   min-height: var(--base-height);
-  background-color: var(--white);
+  background-color: var(--surface);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -118,11 +118,11 @@ export default {
 
 .todo-card--complete {
   text-decoration: line-through;
-  border: solid 1px #7ed321;
+  border: solid 1px var(--complete-border);
 }
 
 .todo-card--incomplete {
-  border: solid 1px #d0021b;
+  border: solid 1px var(--Incomplete-border);
 }
 
 .edit-icon {
