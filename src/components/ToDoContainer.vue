@@ -8,7 +8,7 @@
           class="todo-card"
           v-for="todoItem in todos"
           :key="todoItem.id"
-          :todoItem="todoItem"
+          :todoItem.sync="todoItem"
           @save-todos="saveTodoItem"
           @complete-todo="saveTodoItem"
         />
@@ -24,7 +24,7 @@
 import ToDoItem from '@/components/ToDoItem.vue'
 import AppHeader from '@/components/AppHeader.vue'
 import STORAGE_KEY from '@/utils/storage-key'
-import BASE_TODOS from '@/utils/base-todos'
+import BASE_TODOS from '@/utils/base-todos.js'
 
 export default {
   components: { ToDoItem, AppHeader },
@@ -38,9 +38,9 @@ export default {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || BASE_TODOS
     },
     clearTodos() {
-      this.todos = BASE_TODOS
+      this.todos = Array.from(BASE_TODOS)
 
-      this.saveTodos(BASE_TODOS)
+      this.saveTodos(Array.from(BASE_TODOS))
     },
     findToDoIndex(todo) {
       return this.todos.findIndex(todoItem => todoItem.id === todo.id)
@@ -48,7 +48,7 @@ export default {
     saveTodoItem(todo) {
       const todoIndex = this.findToDoIndex(todo)
 
-      this.todos[todoIndex] = todo
+      this.todos.splice(todoIndex, 1, todo)
 
       this.saveTodos()
     },

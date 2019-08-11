@@ -16,7 +16,9 @@
         @keydown.enter="addTodo"
         v-text="todo.content"
         :contenteditable="isEditable"
-      />
+      >
+        {{ todo.content }}
+      </span>
       <span
         v-if="todo.content !== '' && !isEditable && todo.complete === false"
         @click="editTodo"
@@ -38,8 +40,11 @@ export default {
     }
   },
   watch: {
-    todoItem: function(newVal) {
-      this.todo = newVal
+    todoItem: {
+      handler: function(newVal) {
+        this.todo = newVal
+      },
+      deep: true
     }
   },
   methods: {
