@@ -6,9 +6,17 @@
           <Logo />
         </a>
       </div>
-      <span class="app-header__action-button" @click="emitReset">
-        <ResetIcon />
-        <span>Reset</span>
+      <span class="app-header__action-buttons">
+        <span>
+          <DSMIcon />
+          <span>
+            DSM Tokens
+          </span>
+        </span>
+        <span @click="emitReset">
+          <ResetIcon />
+          <span>Reset</span>
+        </span>
       </span>
     </div>
   </div>
@@ -16,11 +24,13 @@
 
 <script>
 import Logo from '@/components/Logo'
+import DSMIcon from '@/components/DSMIcon'
 import ResetIcon from '@/components/ResetIcon'
 
 export default {
   components: {
     Logo,
+    DSMIcon,
     ResetIcon
   },
   methods: {
@@ -43,7 +53,12 @@ export default {
   font-size: var(--font-simple-body-white-font-size);
 }
 
-.app-header__action-button {
+.app-header__action-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-header__action-buttons > span {
   display: flex;
   align-items: center;
   height: 2.5rem;
@@ -54,7 +69,11 @@ export default {
   user-select: none;
 }
 
-.app-header__action-button:hover {
+.app-header__action-buttons > span:not(:last-of-type) {
+  margin-right: 0.25rem;
+}
+
+.app-header__action-buttons > span:hover {
   background-color: green;
 }
 /* 
