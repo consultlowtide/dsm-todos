@@ -1,5 +1,5 @@
 <template>
-  <div class="full-height container">
+  <div>
     <AppHeader @reset-todos="clearTodos" />
 
     <div class="app-container">
@@ -60,10 +60,6 @@ export default {
 </script>
 
 <style>
-.full-height.container {
-  min-height: 100vh;
-}
-
 .app-container {
   max-width: 900px;
   margin: 1rem;

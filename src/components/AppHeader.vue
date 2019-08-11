@@ -28,7 +28,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--white);
+  color: var(--text-on-primary);
   background-color: var(--primary-color);
   padding: 0 1.5rem;
   height: 56px;
@@ -38,8 +38,8 @@ export default {
   width: 80px;
   height: 40px;
   border-radius: 20px;
-  border: solid 1px var(--white);
-  color: var(--white);
+  border: solid 1px var(--surface);
+  color: var(--text-on-primary);
   background-color: var(--primary-color);
   cursor: pointer;
   transition: var(--base-transition);
@@ -49,7 +49,7 @@ export default {
   width: 80px;
   height: 40px;
   border-radius: 20px;
-  background-color: var(--white);
+  background-color: var(--surface);
   color: var(--black);
 }
 
