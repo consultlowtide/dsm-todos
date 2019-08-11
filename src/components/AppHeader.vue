@@ -2,9 +2,7 @@
   <div>
     <div class="app-header">
       <div class="logo">
-        <span>
-          DSM Proof of Concept
-        </span>
+        <Logo />
       </div>
       <span class="app-header__action-buttons">
         <button @click="emitReset">Reset</button>
@@ -14,7 +12,12 @@
 </template>
 
 <script>
+import Logo from '@/components/Logo'
+
 export default {
+  components: {
+    Logo
+  },
   methods: {
     emitReset() {
       this.$emit('reset-todos')
