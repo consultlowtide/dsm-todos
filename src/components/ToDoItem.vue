@@ -4,7 +4,7 @@
       'todo-card': true,
       'todo-card--complete': todo.complete,
       'todo-card--incomplete': !todo.complete && todo.content !== '',
-      'todo-card--empty': todo.content === ''
+      'todo-card--empty': todo.content === '' && !isEditable
     }"
     @click="handleTodoClick"
   >
@@ -47,7 +47,7 @@ export default {
       if (this.isEditable === false && this.todo.content !== '') {
         this.completeTodo()
       } else if (this.todo.content === '') {
-        this.todo.content = ' '
+        // this.todo.content = ' '
         this.editTodo()
       }
     },
@@ -97,7 +97,7 @@ export default {
   user-select: none;
   transition: var(--base-transition);
   font-size: var(--base-font-size);
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .todo-card ~ .todo-card--empty:after {
