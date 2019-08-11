@@ -23,6 +23,8 @@ export default {
 }
 
 :root {
+  background-color: var(--color-background-app);
+
   font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

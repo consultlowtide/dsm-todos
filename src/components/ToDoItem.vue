@@ -87,7 +87,7 @@ export default {
 .todo-card {
   border: solid 1px var(--color-empty-border);
   min-height: var(--base-height);
-  background-color: var(--color-surface);
+  background-color: var(--color-background-card);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;

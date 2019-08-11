@@ -38,7 +38,7 @@ export default {
   width: 80px;
   height: 40px;
   border-radius: 20px;
-  border: solid 1px var(--color-surface);
+  border: solid 1px var(--color-background-card);
   color: var(--color-text-on-primary);
   background-color: var(--color-primary);
   cursor: pointer;
@@ -49,7 +49,7 @@ export default {
   width: 80px;
   height: 40px;
   border-radius: 20px;
-  background-color: var(--color-surface);
+  background-color: var(--color-background-card);
   color: var(--color-text-on-surface);
 }
 
