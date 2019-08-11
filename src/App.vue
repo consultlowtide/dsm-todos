@@ -25,7 +25,8 @@ export default {
 :root {
   background-color: var(--color-background-app);
 
-  font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
+  font-family: var(--font-simple-large-black-font-family), Helvetica, Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -33,7 +34,8 @@ export default {
   --base-line-height: 1rem;
   --base-space: 0.5rem;
   --base-transition: 0.2s ease-in-out;
-  --base-font-size: 1.25rem;
+  --base-font-size: var(--font-simple-small-black-font-size);
+  --base-font-color: var(--font-simple-large-black-color);
 }
 
 .full-height {
@@ -43,14 +45,14 @@ export default {
 @media only screen and (min-width: 600px) {
   :root {
     --base-height: 12.5rem;
-    --base-font-size: 1.5rem;
+    --base-font-size: var(--font-simple-medium-black-font-size);
   }
 }
 
 @media only screen and (min-width: 932px) {
   :root {
     --base-height: 15rem;
-    --base-font-size: 1.75rem;
+    --base-font-size: var(--font-simple-large-black-font-size);
   }
 }
 </style>
