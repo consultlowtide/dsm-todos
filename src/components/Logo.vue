@@ -13,7 +13,7 @@
     <g id="Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g
         transform="translate(3.000000, 36.000000)"
-        fill="#ffffff"
+        fill="var(--color-background-app)"
         fill-rule="nonzero"
         id="Path"
       >
