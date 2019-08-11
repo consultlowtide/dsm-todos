@@ -28,8 +28,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--text-on-primary);
-  background-color: var(--primary-color);
+  color: var(--color-text-on-primary);
+  background-color: var(--color-primary);
   padding: 0 1.5rem;
   height: 56px;
 }
@@ -38,9 +38,9 @@ export default {
   width: 80px;
   height: 40px;
   border-radius: 20px;
-  border: solid 1px var(--surface);
-  color: var(--text-on-primary);
-  background-color: var(--primary-color);
+  border: solid 1px var(--color-surface);
+  color: var(--color-text-on-primary);
+  background-color: var(--color-primary);
   cursor: pointer;
   transition: var(--base-transition);
 }
@@ -49,8 +49,8 @@ export default {
   width: 80px;
   height: 40px;
   border-radius: 20px;
-  background-color: var(--surface);
-  color: var(--black);
+  background-color: var(--color-surface);
+  color: var(--color-text-on-surface);
 }
 
 @media only screen and (min-width: 932px) {

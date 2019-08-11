@@ -73,7 +73,7 @@ export default {
 }
 
 .small-todos-container {
-  border: solid 1px var(--empty-border);
+  border: solid 1px var(--color-empty-border);
   border-radius: 8px;
   min-height: var(--base-height);
   padding: 1.5rem;

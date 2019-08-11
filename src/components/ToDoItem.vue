@@ -89,9 +89,9 @@ export default {
 
 <style scoped>
 .todo-card {
-  border: solid 1px var(--empty-border);
+  border: solid 1px var(--color-empty-border);
   min-height: var(--base-height);
-  background-color: var(--surface);
+  background-color: var(--color-surface);
   border-radius: 8px;
   padding: 1.5rem;
   display: flex;
@@ -105,7 +105,7 @@ export default {
 }
 
 .todo-card__input-field {
-  caret-color: var(--primary-color);
+  caret-color: var(--color-primary);
 }
 
 .todo-card__input-field:focus {
@@ -118,11 +118,11 @@ export default {
 
 .todo-card--complete {
   text-decoration: line-through;
-  border: solid 1px var(--complete-border);
+  border: solid 1px var(--color-complete-border);
 }
 
 .todo-card--incomplete {
-  border: solid 1px var(--Incomplete-border);
+  border: solid 1px var(--color-incomplete-border);
 }
 
 .edit-icon {
