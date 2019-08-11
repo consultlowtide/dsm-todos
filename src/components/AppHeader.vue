@@ -2,7 +2,9 @@
   <div>
     <div class="app-header">
       <div class="logo">
-        <Logo />
+        <a href="https://consultlowtide.ca" target="_blank">
+          <Logo />
+        </a>
       </div>
       <span class="app-header__action-button" @click="emitReset">
         <ResetIcon />
@@ -49,6 +51,7 @@ export default {
   padding: 0.75rem;
   border-radius: 4px;
   transition: var(--base-transition);
+  user-select: none;
 }
 
 .app-header__action-button:hover {
