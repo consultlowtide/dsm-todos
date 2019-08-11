@@ -3,14 +3,13 @@
     :class="{
       'todo-card': true,
       'todo-card--complete': todo.complete,
-      'todo-card--incomplete': !todo.complete && todo.content !== ''
+      'todo-card--incomplete': !todo.complete && todo.content !== '',
+      'todo-card--empty': todo.content === ''
     }"
-    @click="completeTodo"
+    @click="handleTodoClick"
   >
     <div>
-      <add-icon v-if="todo.content === ''" @icon-click="handleIconClick" />
       <span
-        v-else
         class="todo-card__input-field"
         :ref="`todo-ref-${todo.id}`"
         @blur="addTodo"
@@ -30,13 +29,8 @@
 </template>
 
 <script>
-import AddIcon from '@/components/AddIcon.vue'
-
 export default {
   props: ['todoItem'],
-  components: {
-    AddIcon
-  },
   data: function() {
     return {
       todo: this.todoItem,
@@ -49,9 +43,13 @@ export default {
     }
   },
   methods: {
-    handleIconClick() {
-      this.todo.content = ' '
-      this.editTodo()
+    handleTodoClick() {
+      if (this.isEditable === false && this.todo.content !== '') {
+        this.completeTodo()
+      } else if (this.todo.content === '') {
+        this.todo.content = ' '
+        this.editTodo()
+      }
     },
     editTodo() {
       this.isEditable = true
@@ -65,11 +63,9 @@ export default {
       })
     },
     completeTodo() {
-      if (this.isEditable === false && this.todo.content !== '') {
-        this.todo.complete = !this.todo.complete
+      this.todo.complete = !this.todo.complete
 
-        this.$emit('complete-todo', this.todo)
-      }
+      this.$emit('complete-todo', this.todo)
     },
     addTodo($event) {
       const newTodo = {
@@ -104,6 +100,15 @@ export default {
   word-break: break-all;
 }
 
+.todo-card ~ .todo-card--empty:after {
+  content: '🥖';
+  font-size: 4.5rem;
+}
+
+.todo-card--empty:after {
+  content: '🍞';
+  font-size: 5rem;
+}
 .todo-card__input-field {
   caret-color: var(--color-primary);
 }

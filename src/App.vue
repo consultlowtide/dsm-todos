@@ -16,12 +16,14 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 :root {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'IBM Plex Sans', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
