@@ -129,6 +129,7 @@ export default {
 
 .todo-card--complete {
   text-decoration: line-through;
+  text-decoration-color: var(--color-complete-border);
   border: solid 1px var(--color-complete-border);
 }
 
