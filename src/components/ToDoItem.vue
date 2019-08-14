@@ -102,6 +102,7 @@ export default {
   user-select: none;
   transition: var(--base-transition);
   font-size: var(--base-font-size);
+  color: var(--base-font-color);
   word-break: break-word;
 }
 

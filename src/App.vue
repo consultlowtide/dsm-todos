@@ -34,6 +34,7 @@ export default {
   --base-space: 0.5rem;
   --base-transition: 0.2s ease-in-out;
   --base-font-size: var(--font-small-font-size);
+  --base-font-color: var(--font-small-color);
   --body-font-size: var(--font-body-font-size);
   --body-font-color: var(--font-body-color);
   /* --base-font-color */
@@ -47,6 +48,7 @@ export default {
   :root {
     --base-height: 12.5rem;
     --base-font-size: var(--font-medium-font-size);
+    --base-font-color: var(--font-medium-color);
   }
 }
 
@@ -54,6 +56,7 @@ export default {
   :root {
     --base-height: 15rem;
     --base-font-size: var(--font-large-font-size);
+    --base-font-color: var(--font-large-color);
   }
 }
 </style>
