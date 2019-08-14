@@ -25,8 +25,7 @@ export default {
 :root {
   background-color: var(--color-background-app);
 
-  font-family: var(--font-simple-large-black-font-family), Helvetica, Arial,
-    sans-serif;
+  font-family: var(--font-large-font-family), Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -34,8 +33,10 @@ export default {
   --base-line-height: 1rem;
   --base-space: 0.5rem;
   --base-transition: 0.2s ease-in-out;
-  --base-font-size: var(--font-simple-small-black-font-size);
-  --base-font-color: var(--font-simple-large-black-color);
+  --base-font-size: var(--font-small-font-size);
+  --body-font-size: var(--font-body-font-size);
+  --body-font-color: var(--font-body-color);
+  /* --base-font-color */
 }
 
 .full-height {
@@ -45,14 +46,14 @@ export default {
 @media only screen and (min-width: 600px) {
   :root {
     --base-height: 12.5rem;
-    --base-font-size: var(--font-simple-medium-black-font-size);
+    --base-font-size: var(--font-medium-font-size);
   }
 }
 
 @media only screen and (min-width: 932px) {
   :root {
     --base-height: 15rem;
-    --base-font-size: var(--font-simple-large-black-font-size);
+    --base-font-size: var(--font-large-font-size);
   }
 }
 </style>
