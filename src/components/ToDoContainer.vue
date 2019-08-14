@@ -77,6 +77,9 @@ export default {
   border-radius: 8px;
   min-height: var(--base-height);
   padding: 1.5rem;
+  color: var(--base-font-color);
+  font-size: var(--base-font-size);
+  color: var(--base-font-color);
 }
 
 @media only screen and (min-width: 932px) {
