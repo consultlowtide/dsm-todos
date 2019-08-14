@@ -80,6 +80,7 @@ export default {
   color: var(--base-font-color);
   font-size: var(--base-font-size);
   color: var(--base-font-color);
+  background-color: var(--color-background-card);
 }
 
 @media only screen and (min-width: 932px) {
