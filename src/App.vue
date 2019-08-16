@@ -35,9 +35,8 @@ export default {
   --base-transition: 0.2s ease-in-out;
   --base-font-size: var(--font-small-font-size);
   --base-font-color: var(--font-small-color);
-  --body-font-size: var(--font-body-font-size);
-  --body-font-color: var(--font-body-color);
-  /* --base-font-color */
+  --header-font-size: var(--font-header-font-size);
+  --header-font-color: var(--font-header-color);
 }
 
 .full-height {

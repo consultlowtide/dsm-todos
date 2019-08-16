@@ -46,7 +46,7 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--body-font-color);
+  color: var(--header-font-color);
   background-color: var(--color-primary);
   padding: 0 1.5rem;
   height: 56px;
