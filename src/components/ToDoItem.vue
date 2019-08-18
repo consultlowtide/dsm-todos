@@ -94,7 +94,7 @@ export default {
   min-height: var(--base-height);
   background-color: var(--color-background-card);
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: var(--card-padding);
   display: flex;
   align-items: center;
   justify-content: center;

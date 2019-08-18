@@ -33,6 +33,7 @@ export default {
   --base-line-height: 1rem;
   --base-space: 0.5rem;
   --base-transition: 0.2s ease-in-out;
+  --card-padding: 1.5rem;
   --base-font-size: var(--font-small-font-size);
   --base-font-color: var(--font-small-color);
   --header-font-size: var(--font-header-font-size);
@@ -48,12 +49,14 @@ export default {
     --base-height: 12.5rem;
     --base-font-size: var(--font-medium-font-size);
     --base-font-color: var(--font-medium-color);
+    --card-padding: 1.5rem;
   }
 }
 
 @media only screen and (min-width: 932px) {
   :root {
     --base-height: 15rem;
+    --card-padding: 1.5rem 2rem;
     --base-font-size: var(--font-large-font-size);
     --base-font-color: var(--font-large-color);
   }
