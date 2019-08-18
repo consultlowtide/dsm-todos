@@ -117,6 +117,19 @@ export default {
   word-break: break-word;
 }
 
+.small-todo-card:not(:last-of-type) {
+  cursor: pointer;
+  user-select: none;
+  transition: var(--base-transition);
+  font-size: calc(var(--base-font-size) - 0.25rem);
+  color: var(--base-font-color);
+  word-break: break-word;
+}
+
+.small-todo-card:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+
 .todo-card ~ .todo-card.todo-card--empty:after {
   content: '🥖';
   font-size: 4.5rem;
@@ -144,9 +157,12 @@ export default {
   border-width: 2px;
 }
 
-.todo-card.todo-card--complete {
+.todo-card--complete {
   text-decoration: line-through;
   text-decoration-color: var(--color-complete-border);
+}
+
+.todo-card.todo-card--complete {
   border: solid 1px var(--color-complete-border);
 }
 
