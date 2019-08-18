@@ -1,7 +1,8 @@
 <template>
   <div
     :class="{
-      'todo-card': true,
+      'todo-card': todoSize === 'big',
+      'small-todo-card': todoSize === 'small',
       'todo-card--complete': todo.complete,
       'todo-card--incomplete': !todo.complete && todo.content !== '',
       'todo-card--empty': todo.content === '' && !isEditable
@@ -32,7 +33,17 @@
 
 <script>
 export default {
-  props: ['todoItem'],
+  props: {
+    todoItem: {
+      type: Object,
+      required: true
+    },
+    todoSize: {
+      type: String,
+      required: false,
+      default: 'big'
+    }
+  },
   data: function() {
     return {
       todo: this.todoItem,
@@ -106,15 +117,21 @@ export default {
   word-break: break-word;
 }
 
-.todo-card ~ .todo-card--empty:after {
+.todo-card ~ .todo-card.todo-card--empty:after {
   content: '🥖';
   font-size: 4.5rem;
 }
 
-.todo-card--empty:after {
+.todo-card.todo-card--empty:after {
   content: '🍞';
   font-size: 5rem;
 }
+
+.small-todo-card.todo-card--empty:after {
+  content: '🥯';
+  font-size: 1.5rem;
+}
+
 .todo-card__input-field {
   caret-color: var(--color-primary);
 }
@@ -127,13 +144,13 @@ export default {
   border-width: 2px;
 }
 
-.todo-card--complete {
+.todo-card.todo-card--complete {
   text-decoration: line-through;
   text-decoration-color: var(--color-complete-border);
   border: solid 1px var(--color-complete-border);
 }
 
-.todo-card--incomplete {
+.todo-card.todo-card--incomplete {
   border: solid 1px var(--color-incomplete-border);
 }
 

@@ -5,61 +5,69 @@
     <div class="app-container">
       <div class="todo-list">
         <ToDoItem
-          class="todo-card"
-          v-for="todoItem in todos"
+          v-for="todoItem in todos.bigToDos"
           :key="todoItem.id"
           :todoItem.sync="todoItem"
           @save-todos="saveTodoItem"
           @complete-todo="saveTodoItem"
         />
-        <div class="todo-card small-todos-container">
-          Links are going to be here soon!
-        </div>
+        <SmallToDoContainer
+          class="todo-card small-todos-container"
+          @save-small-todos="saveSmallTodos"
+          :todos="todos"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import ToDoItem from '@/components/ToDoItem.vue'
-import AppHeader from '@/components/AppHeader.vue'
+import AppHeader from '@/components/AppHeader'
+import ToDoItem from '@/components/ToDoItem'
+import SmallToDoContainer from '@/components/SmallToDoContainer'
 import STORAGE_KEY from '@/utils/storage-key'
 import BASE_TODOS from '@/utils/base-todos.js'
 
 export default {
-  components: { ToDoItem, AppHeader },
+  components: { ToDoItem, AppHeader, SmallToDoContainer },
   data: function() {
     return {
-      todos: this.fetchTodos()
+      todos: {}
     }
+  },
+  mounted() {
+    this.todos = this.fetchTodos()
   },
   methods: {
     fetchTodos() {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || BASE_TODOS
     },
     clearTodos() {
-      this.todos = Array.from(BASE_TODOS)
-
-      this.saveTodos(Array.from(BASE_TODOS))
+      this.todos = BASE_TODOS
+      this.saveTodos(this.todos)
     },
     findToDoIndex(todo) {
-      return this.todos.findIndex(todoItem => todoItem.id === todo.id)
+      return this.todos.bigToDos.findIndex(todoItem => todoItem.id === todo.id)
     },
     saveTodoItem(todo) {
       const todoIndex = this.findToDoIndex(todo)
 
-      this.todos.splice(todoIndex, 1, todo)
+      this.todos.bigToDos.splice(todoIndex, 1, todo)
 
-      this.saveTodos()
+      this.saveTodos(this.todos)
     },
-    saveTodos() {
+    saveTodos(todos) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
+    },
+    saveSmallTodos(smallTodos) {
+      this.todos.smallToDos = smallTodos
       localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos))
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .app-container {
   max-width: 900px;
   margin: 1rem;
@@ -72,17 +80,6 @@ export default {
   margin: 2rem 0;
 }
 
-.small-todos-container {
-  border: solid 1px var(--color-empty-border);
-  border-radius: 8px;
-  min-height: var(--base-height);
-  padding: 1.5rem;
-  color: var(--base-font-color);
-  font-size: var(--base-font-size);
-  color: var(--base-font-color);
-  background-color: var(--color-background-card);
-}
-
 @media only screen and (min-width: 932px) {
   .app-container {
     margin: auto;
@@ -93,10 +90,6 @@ export default {
   }
 
   .todo-list .todo-card:first-of-type {
-    grid-column: span 3;
-  }
-
-  .small-todos-container {
     grid-column: span 3;
   }
 }
