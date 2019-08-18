@@ -15,9 +15,8 @@
       fill-rule="evenodd"
     >
       <g
-        id="Icon"
+        id="reset-icon"
         transform="translate(10.000000, 12.000000) scale(-1, 1) translate(-10.000000, -12.000000) translate(-1.000000, 0.000000)"
-        fill="var(--body-font-color)"
         fill-rule="nonzero"
       >
         <g id="Icon-Shape" transform="translate(-0.500000, 0.000000)">

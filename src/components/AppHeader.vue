@@ -13,7 +13,7 @@
             DSM Tokens
           </span>
         </span>
-        <span @click="emitReset">
+        <span class="reset-icon-container" @click="emitReset">
           <ResetIcon />
           <span>Reset</span>
         </span>
@@ -41,7 +41,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .app-header {
   display: flex;
   justify-content: space-between;
@@ -74,7 +74,16 @@ export default {
 }
 
 .app-header__action-buttons > span:hover {
-  background-color: green;
+  color: var(--color-primary);
+  background-color: var(--header-font-color);
+}
+
+#reset-icon {
+  fill: var(--header-font-color);
+}
+
+.reset-icon-container:hover #reset-icon {
+  fill: var(--color-primary);
 }
 
 @media only screen and (min-width: 932px) {
