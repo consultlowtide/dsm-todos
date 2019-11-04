@@ -32,7 +32,10 @@ export default {
   components: { ToDoItem, AppHeader, SmallToDoContainer },
   data: function() {
     return {
-      todos: {}
+      todos: {
+        bigToDos: [],
+        smallTodos: []
+      }
     }
   },
   mounted() {
@@ -43,8 +46,7 @@ export default {
       return JSON.parse(localStorage.getItem(STORAGE_KEY)) || BASE_TODOS
     },
     clearTodos() {
-      this.todos = BASE_TODOS
-      this.saveTodos(this.todos)
+      this.saveTodos(BASE_TODOS)
     },
     findToDoIndex(todo) {
       return this.todos.bigToDos.findIndex(todoItem => todoItem.id === todo.id)
@@ -57,6 +59,9 @@ export default {
       this.saveTodos(this.todos)
     },
     saveTodos(todos) {
+      const { bigToDos, smallToDos } = todos
+      this.todos.bigToDos = bigToDos
+      this.todos.smallToDos = smallToDos
       localStorage.setItem(STORAGE_KEY, JSON.stringify(todos))
     },
     saveSmallTodos(smallTodos) {
